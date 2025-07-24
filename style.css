@@ -1,0 +1,700 @@
+/* General Styling */
+:root {
+    --primary-color: #007bff; /* A tech-blue */
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --white-color: #ffffff;
+    --text-color: #333;
+    --heading-color: #222;
+    --accent-color: #28a745; /* Green for success/growth, like trading charts */
+    --code-background: #eee;
+    --dark-blue: #0A192F; /* Dark background for a tech feel */
+    --light-blue-green: #64FFDA; /* Bright accent for highlights */
+    --slate-color: #8892B0; /* Muted text color */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--slate-color);
+    background-color: var(--dark-blue); /* Dark background for professional tech look */
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--light-blue-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    color: var(--light-color);
+    margin-bottom: 15px;
+}
+
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section:nth-of-type(even) {
+    background-color: var(--dark-color);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--light-blue-green);
+    color: var(--dark-blue);
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}
+
+/* Header/Navigation */
+header {
+    background-color: rgba(10, 25, 47, 0.9); /* Slightly transparent dark blue */
+    color: var(--white-color);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light-blue-green);
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--white-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--light-blue-green);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://source.unsplash.com/1600x900/?coding,trading') no-repeat center center/cover;
+    /* Placeholder for background image. Replace with a high-quality image of code, circuits, or trading charts. */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-top: 80px; /* To account for fixed header */
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: var(--light-blue-green);
+}
+
+.hero-content h2 {
+    font-size: 1.8em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: var(--white-color);
+}
+
+.hero-content .tagline {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-content .contact-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.hero-content .contact-info i {
+    color: var(--light-blue-green);
+    margin-right: 10px;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.objective, .summary {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--dark-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.objective h3, .summary h3 {
+    color: var(--light-blue-green);
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    color: var(--slate-color);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.skill-category {
+    background-color: var(--dark-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category h3 {
+    color: var(--light-blue-green);
+    margin-bottom: 15px;
+}
+
+/* Skills Section - New Alignment and No Bullets */
+.skill-items p {
+    display: flex; /* Makes icon and text align on the same line */
+    align-items: flex-start; /* Aligns items to the start of the cross-axis (top) */
+    margin-bottom: 12px; /* Space between each skill item */
+    color: var(--slate-color); /* Inherit text color */
+    line-height: 1.4; /* Adjust line height for readability */
+}
+
+.skill-items p:last-child {
+    margin-bottom: 0; /* No margin after the last item in the list */
+}
+
+.skill-items p i {
+    margin-right: 12px; /* Space between the icon and the text */
+    color: var(--light-blue-green); /* Color the icons */
+    font-size: 1.2em; /* Slightly larger icons for emphasis */
+    min-width: 25px; /* Ensures icons have consistent space, preventing text from shifting */
+    text-align: center; /* Centers the icon within its allocated min-width */
+}
+
+/* Adjustments for the H3 titles within skill categories */
+.skill-category h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the icon and the heading text */
+    margin-bottom: 20px; /* More space below the heading */
+}
+
+/* Experience & Education Sections (Timeline/List styles) */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--light-blue-green);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    background-color: var(--dark-color);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left; /* Keep all text aligned left for consistent reading */
+    width: 55%; /* Set back to 45% to allow more room for separation */
+    min-height: 180px; /* Optional: Keep a minimum height if you added it, adjust as needed */
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--light-blue-green);
+    border: 4px solid var(--dark-blue);
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Adjustments for ODD items (left side) - Push further left */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    /* Increase negative transform/margin to push it further left from the center line */
+    transform: translateX(-15%); /* Adjust this value for more or less separation */
+    margin-left: -20px; /* Adjust this value for more or less separation */
+    /* text-align: left; REMOVED from here, as it's now global on .timeline-item */
+}
+
+.timeline-item:nth-child(odd)::after {
+    left: auto;
+    right: -10px; /* Positions the dot on the right edge of the box, connecting to the line */
+}
+
+/* Adjustments for EVEN items (right side) - Push further right */
+.timeline-item:nth-child(even) {
+    left: 50%; /* Stays at 50% start point for the right column */
+    /* Increase positive transform/margin to push it further right from the center line */
+    transform: translateX(15%); /* Adjust this value for more or less separation */
+    margin-left: 20px; /* Adjust this value for more or less separation */
+    text-align: left; /* Keep text aligned left within the box */
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px; /* Positions the dot on the left edge of the box, connecting to the line */
+}
+
+.timeline-item h3 {
+    color: var(--light-blue-green);
+    margin-bottom: 5px;
+}
+
+.timeline-item .role, .timeline-item .degree {
+    color: var(--white-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.timeline-item .duration, .timeline-item .year {
+    font-size: 0.9em;
+    color: var(--slate-color);
+    margin-bottom: 10px;
+}
+
+.timeline-item ul.responsibilities {
+    list-style: disc;
+    padding-left: 20px;
+    color: var(--slate-color);
+}
+
+.timeline-item ul.responsibilities li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+.timeline-item ul.responsibilities li:last-child {
+    margin-bottom: 0;
+}
+
+/* IMPORTANT: Mobile Responsiveness - keep consistent left alignment */
+@media (max-width: 768px) {
+    /* ... (keep other existing rules for nav-links, burger, hero-content) ... */
+
+    /* Timeline adjustment for mobile - MAKE ALL ITEMS LEFT ALIGNED to the side line */
+    .timeline::after {
+        left: 20px; /* Align timeline line to the left on small screens */
+    }
+
+    .timeline-item {
+        width: calc(100% - 70px); /* Full width minus space for line and padding */
+        left: 50px !important; /* Push all items to the right to accommodate the line */
+        transform: translateX(0) !important; /* Ensure no extra horizontal shift */
+        margin-left: 0 !important; /* Ensure no extra horizontal margin */
+        margin-right: 20px; /* Add some right margin */
+        margin-bottom: 30px; /* Adjust bottom margin for mobile */
+    }
+
+    .timeline-item::after {
+        left: -10px !important; /* Move bullet to the left, aligning with the line */
+        right: auto !important;
+    }
+
+    /* Remove specific odd/even overrides for mobile to keep them all consistently left-aligned */
+    .timeline-item:nth-child(odd) {
+        margin-left: 0;
+        left: 50px;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
+        left: 50px;
+    }
+}
+/* IMPORTANT: Re-check your media query for responsiveness */
+@media (max-width: 768px) {
+    /* ... (keep other existing rules for nav-links, burger, hero-content) ... */
+
+    /* Timeline adjustment for mobile - MAKE ALL ITEMS LEFT ALIGNED */
+    .timeline::after {
+        left: 20px; /* Align timeline line to the left on small screens */
+    }
+
+    .timeline-item {
+        width: calc(100% - 70px); /* Full width minus space for line and padding */
+        left: 50px !important; /* Push all items to the right to accommodate the line */
+        transform: translateX(0) !important; /* Remove any previous transforms */
+        margin-left: 0 !important; /* Remove any previous margins */
+        margin-right: 20px; /* Add some right margin */
+        margin-bottom: 30px; /* Adjust bottom margin for mobile */
+    }
+
+    .timeline-item::after {
+        left: -10px !important; /* Move bullet to the left, aligning with the line */
+        right: auto !important;
+    }
+
+    /* Remove specific odd/even overrides for mobile to keep them all left */
+    .timeline-item:nth-child(odd) {
+        margin-left: 0;
+        left: 50px; /* Ensure consistency */
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
+        left: 50px; /* Ensure consistency */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 20px; /* Align timeline line to the left on small screens */
+    }
+
+    .timeline-item {
+        width: calc(100% - 70px); /* Full width minus space for line and padding */
+        left: 50px !important; /* Push all items to the right to accommodate the line */
+        transform: translateX(0) !important; /* Remove any previous transforms */
+        margin-left: 0 !important; /* Remove any previous margins */
+        margin-right: 20px; /* Add some right margin */
+        margin-bottom: 30px; /* Adjust bottom margin for mobile */
+    }
+
+    .timeline-item::after {
+        left: -10px !important; /* Move bullet to the left, aligning with the line */
+        right: auto !important;
+    }
+
+    /* Remove specific odd/even overrides for mobile to keep them all left */
+    .timeline-item:nth-child(odd) {
+        margin-left: 0;
+        left: 50px; /* Ensure consistency */
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
+        left: 50px; /* Ensure consistency */
+    }
+}
+/* Education List (alternative for non-timeline items) */
+.education-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.education-item {
+    background-color: var(--dark-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.education-item h3 {
+    color: var(--light-blue-green);
+    margin-bottom: 5px;
+}
+
+.education-item .degree {
+    color: var(--white-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.education-item .year {
+    font-size: 0.9em;
+    color: var(--slate-color);
+}
+
+
+/* References Section */
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.reference-item {
+    background-color: var(--dark-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reference-item h3 {
+    color: var(--light-blue-green);
+    margin-bottom: 5px;
+}
+
+.reference-item p {
+    font-size: 0.95em;
+    color: var(--slate-color);
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--slate-color);
+    border-radius: 5px;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--slate-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--light-blue-green);
+    box-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 2px solid var(--light-blue-green);
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 70px; /* Adjust based on header height */
+        background-color: var(--dark-blue);
+        height: calc(100vh - 70px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 50px;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 25px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3em;
+    }
+
+    .about-content, .skills-grid, .education-list, .references-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline adjustment for mobile */
+    .timeline::after {
+        left: 20px; /* Align timeline to the left on small screens */
+    }
+
+    .timeline-item {
+        left: 0 !important;
+        transform: translateX(0) !important;
+        margin-left: 50px; /* Indent items */
+        text-align: left !important;
+    }
+
+    .timeline-item::after {
+        left: -10px !important; /* Move bullet to the left */
+        right: auto !important;
+    }
+
+    .timeline-item:nth-child(odd) {
+        margin-left: 50px;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 50px;
+    }
+
+}
+
+/* Burger Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Nav Link Animation */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-top: 25px;
+    margin-bottom: 20px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Space between icons */
+}
+
+.social-links a {
+    color: var(--white-color); /* Icons are white by default */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--light-blue-green); /* Hover effect */
+    transform: translateY(-3px); /* Subtle lift on hover */
+}
+
+/* Footer Social Links */
+.footer-social-links {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-social-links a {
+    color: var(--white-color);
+    transition: color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    color: var(--light-blue-green);
+}
+
